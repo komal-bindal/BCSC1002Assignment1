@@ -11,6 +11,18 @@ public class Book {
     private String authorName;
     private String bookISBNNumber;
 
+    public Book() {
+        name = "Think Java";
+        authorName = "Allen B. Downey";
+        bookISBNNumber = "9781491929513";
+    }
+
+    public Book(String name, String authorName, String bookISBNNumber) {
+        this.name = name;
+        this.authorName = authorName;
+        this.bookISBNNumber = bookISBNNumber;
+    }
+
     public String getName() {
         return name;
     }
