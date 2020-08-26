@@ -6,8 +6,19 @@
  * */
 package execution;
 
+import definitions.Book;
+import definitions.Library;
+import definitions.Student;
+
 public class FrontDesk {
     public static void main(String[] args) {
+        Library lib = new Library();
+        System.out.println(lib);
 
+        Student student = new Student();
+        System.out.println(student);
+
+        Book book = new Book();
+        System.out.println(book);
     }
 }
