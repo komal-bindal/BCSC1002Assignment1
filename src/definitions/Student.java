@@ -64,10 +64,10 @@ public class Student {
 
     @Override
     public String toString() {
-        return "numberOfBooksIssued: " + getNumberOfBooksIssued() +
-                ", nameOfBooksIssued: " + Arrays.toString(getNameOfBooksIssued()) +
-                ", name: '" + getName() + '\'' +
-                ", universityRollNumber: " + getUniversityRollNumber();
+        return "Student Name: " + getName() +
+                "\nUniversity Roll Number: " + getUniversityRollNumber() +
+                "\nNumber of books issued: " + getNumberOfBooksIssued() +
+                "\nName of books issued: " + Arrays.toString(getNameOfBooksIssued());
     }
 
     @Override
