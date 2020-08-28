@@ -23,9 +23,9 @@ public class Student {
         nameOfBooksIssued[0] = new Book();
     }
 
-    public Student(long universityRollNumber) {
+    public Student(long universityRollNumber, String name) {
         this.universityRollNumber = universityRollNumber;
-        this.name = "Dev";
+        this.name = name;
         this.numberOfBooksIssued = 1;
         this.nameOfBooksIssued = new Book[1];
         nameOfBooksIssued[0] = new Book();
