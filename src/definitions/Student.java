@@ -95,4 +95,13 @@ public class Student {
         result = 31 * result + Arrays.hashCode(getNameOfBooksIssued());
         return result;
     }
+
+    /**
+     * This method will print all the books issued by a student.
+     */
+    public void listIssuedBook() {
+        for (Book book : nameOfBooksIssued) {
+            System.out.println(book);
+        }
+    }
 }
