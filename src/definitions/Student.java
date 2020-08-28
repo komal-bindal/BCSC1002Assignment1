@@ -18,7 +18,15 @@ public class Student {
     public Student() {
         name = "Dev";
         universityRollNumber = 191500200L;
-        numberOfBooksIssued = 0;
+        numberOfBooksIssued = 1;
+        this.nameOfBooksIssued = new Book[1];
+        nameOfBooksIssued[0] = new Book();
+    }
+
+    public Student(long universityRollNumber) {
+        this.universityRollNumber = universityRollNumber;
+        this.name = "Dev";
+        this.numberOfBooksIssued = 1;
         this.nameOfBooksIssued = new Book[1];
         nameOfBooksIssued[0] = new Book();
     }
