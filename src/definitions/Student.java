@@ -113,4 +113,14 @@ public class Student {
     public void issueBook(String bookName) {
         System.out.println("Thank you for issuing \"" + bookName + "\".");
     }
+
+    /**
+     * This method will allow a student to return a book.
+     *
+     * @param bookName This is the name of book that the Student want to return.
+     */
+    public void returnBook(String bookName) {
+        System.out.println("Thank you for returning \"" + bookName + "\".");
+    }
+
 }
