@@ -104,4 +104,13 @@ public class Student {
             System.out.println(book);
         }
     }
+
+    /**
+     * This method will allow a student to issue a book.
+     *
+     * @param bookName This is the name of book that the Student want to issue.
+     */
+    public void issueBook(String bookName) {
+        System.out.println("Thank you for issuing \"" + bookName + "\".");
+    }
 }
