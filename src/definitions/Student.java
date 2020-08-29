@@ -11,7 +11,7 @@ import java.util.Objects;
 
 public class Student {
     int numberOfBooksIssued;
-    Book[] nameOfBooksIssued;
+    Book[] namesOfBooksIssued;
     private String name;
     private long universityRollNumber;
 
@@ -19,23 +19,23 @@ public class Student {
         name = "Dev";
         universityRollNumber = 191500200L;
         numberOfBooksIssued = 1;
-        this.nameOfBooksIssued = new Book[1];
-        nameOfBooksIssued[0] = new Book();
+        this.namesOfBooksIssued = new Book[1];
+        namesOfBooksIssued[0] = new Book();
     }
 
     public Student(long universityRollNumber, String name) {
         this.universityRollNumber = universityRollNumber;
         this.name = name;
         this.numberOfBooksIssued = 1;
-        this.nameOfBooksIssued = new Book[1];
-        nameOfBooksIssued[0] = new Book();
+        this.namesOfBooksIssued = new Book[1];
+        namesOfBooksIssued[0] = new Book();
     }
 
-    public Student(String name, long universityRollNumber, int numberOfBooksIssued, Book[] nameOfBooksIssued) {
+    public Student(String name, long universityRollNumber, int numberOfBooksIssued, Book[] namesOfBooksIssued) {
         this.name = name;
         this.universityRollNumber = universityRollNumber;
         this.numberOfBooksIssued = numberOfBooksIssued;
-        this.nameOfBooksIssued = nameOfBooksIssued;
+        this.namesOfBooksIssued = namesOfBooksIssued;
     }
 
     public String getName() {
@@ -46,12 +46,12 @@ public class Student {
         this.name = name;
     }
 
-    public Book[] getNameOfBooksIssued() {
-        return nameOfBooksIssued.clone();
+    public Book[] getNamesOfBooksIssued() {
+        return namesOfBooksIssued.clone();
     }
 
-    public void setNameOfBooksIssued(Book[] nameOfBooksIssued) {
-        this.nameOfBooksIssued = nameOfBooksIssued;
+    public void setNamesOfBooksIssued(Book[] namesOfBooksIssued) {
+        this.namesOfBooksIssued = namesOfBooksIssued;
     }
 
     public int getNumberOfBooksIssued() {
@@ -75,7 +75,7 @@ public class Student {
         return "Student Name: " + getName() +
                 "\nUniversity Roll Number: " + getUniversityRollNumber() +
                 "\nNumber of books issued: " + getNumberOfBooksIssued() +
-                "\nName of books issued: " + Arrays.toString(getNameOfBooksIssued());
+                "\nName of books issued: " + Arrays.toString(getNamesOfBooksIssued());
     }
 
     @Override
@@ -85,14 +85,14 @@ public class Student {
         Student student = (Student) o;
         return getNumberOfBooksIssued() == student.getNumberOfBooksIssued() &&
                 getUniversityRollNumber() == student.getUniversityRollNumber() &&
-                Arrays.equals(getNameOfBooksIssued(), student.getNameOfBooksIssued()) &&
+                Arrays.equals(getNamesOfBooksIssued(), student.getNamesOfBooksIssued()) &&
                 Objects.equals(getName(), student.getName());
     }
 
     @Override
     public int hashCode() {
         int result = Objects.hash(getNumberOfBooksIssued(), getName(), getUniversityRollNumber());
-        result = 31 * result + Arrays.hashCode(getNameOfBooksIssued());
+        result = 31 * result + Arrays.hashCode(getNamesOfBooksIssued());
         return result;
     }
 
@@ -100,7 +100,7 @@ public class Student {
      * This method will print all the books issued by a student.
      */
     public void listIssuedBook() {
-        for (Book book : nameOfBooksIssued) {
+        for (Book book : namesOfBooksIssued) {
             System.out.println(book);
         }
     }
