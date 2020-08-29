@@ -19,11 +19,9 @@ public class FrontDesk {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Student student = new Student();
         Library library = new Library();
         int studentInput;
-
-        int studentUniversityRollNumber;
+        long studentUniversityRollNumber;
         String bookName;
         String studentName;
         do {
@@ -33,25 +31,49 @@ public class FrontDesk {
             System.out.println("2. Return a previously issued book from me.");
             System.out.println("3. Show me all my issued books.");
             System.out.println("4. Exit.");
+
             studentInput = scanner.nextInt();
             switch (studentInput) {
                 case ISSUE_A_NEW_BOOK:
+                    System.out.print("Please enter your university roll number:- ");
+                    studentUniversityRollNumber = scanner.nextLong();
+                    System.out.print("Please enter your name:- ");
+                    studentName = scanner.next();
+                    Student student = new Student(studentUniversityRollNumber, studentName);
                     System.out.println("These are the books currently available in library:");
-                    library.getBooksCurrentlyAvailable();
-                    System.out.println("Please enter the name of book you want to issue:-");
+                    library.listBooks();
+                    System.out.print("Please enter the name of book you want to issue:-");
+                    scanner.nextLine();
                     bookName = scanner.nextLine();
-                    System.out.println("Thank you for issuing \"" + bookName + "\".");
+                    student.doIssueBook(bookName);
+                    System.out.println();
                     break;
                 case RETURN_PREVIOUSLY_ISSUED_BOOK:
+                    System.out.print("Please enter your university roll number:- ");
+                    studentUniversityRollNumber = scanner.nextLong();
+                    System.out.print("Please enter your name:- ");
+                    studentName = scanner.next();
+                    Student student1 = new Student(studentUniversityRollNumber, studentName);
+                    System.out.print("Please enter the name of book you want to return:-");
+                    scanner.nextLine();
+                    bookName = scanner.nextLine();
+                    student1.doReturnBook(bookName);
+                    System.out.println();
                     break;
                 case SHOW_ALL_ISSUED_BOOKS:
-                    System.out.println("Please enter your name :");
-                    studentName = scanner.nextLine();
-
+                    System.out.print("Please enter your university roll number:- ");
+                    studentUniversityRollNumber = scanner.nextLong();
+                    System.out.print("Please enter your name:- ");
+                    studentName = scanner.next();
+                    Student student3 = new Student(studentUniversityRollNumber, studentName);
+                    System.out.print("These are the books that you have issued:- ");
+                    student3.listIssuedBook();
+                    System.out.println();
                     break;
                 default:
                     break;
             }
         } while (studentInput != EXIT);
+        scanner.close();
     }
 }
