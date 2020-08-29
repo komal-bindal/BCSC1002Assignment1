@@ -110,7 +110,7 @@ public class Student {
      *
      * @param bookName This is the name of book that the Student want to issue.
      */
-    public void issueBook(String bookName) {
+    public void doIssueBook(String bookName) {
         System.out.println("Thank you for issuing \"" + bookName + "\".");
     }
 
@@ -119,7 +119,7 @@ public class Student {
      *
      * @param bookName This is the name of book that the Student want to return.
      */
-    public void returnBook(String bookName) {
+    public void doReturnBook(String bookName) {
         System.out.println("Thank you for returning \"" + bookName + "\".");
     }
 
