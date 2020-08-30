@@ -31,7 +31,6 @@ public class FrontDesk {
             System.out.println("2. Return a previously issued book from me.");
             System.out.println("3. Show me all my issued books.");
             System.out.println("4. Exit.");
-
             studentInput = scanner.nextInt();
             switch (studentInput) {
                 case ISSUE_A_NEW_BOOK:
